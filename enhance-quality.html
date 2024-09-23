@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LisTMe - Enhance Quality</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>LisTMe</h1>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <div id="menu" class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="analytics.html">Analytics</a></li>
+                <li><a href="generate-captions.html">Generate Captions</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <div class="upload-container">
+            <h2>Enhance Your Images</h2>
+            <p>Select the options below to enhance your images with AI technology.</p>
+
+            <div class="enhance-quality-options">
+                <div class="enhance-quality-option" onclick="enhanceWithAI()">
+                    <img src="images/option1.png" alt="Option 1">
+                    <p>AI Color Correction</p>
+                </div>
+                <div class="enhance-quality-option" onclick="enhanceWithAI()">
+                    <img src="images/option2.png" alt="Option 2">
+                    <p>AI Sharpening</p>
+                </div>
+                <div class="enhance-quality-option" onclick="enhanceWithAI()">
+                    <img src="images/option3.png" alt="Option 3">
+                    <p>AI Noise Reduction</p>
+                </div>
+                <div class="enhance-quality-option" onclick="enhanceWithAI()">
+                    <img src="images/option4.png" alt="Option 4">
+                    <p>AI Detail Enhancement</p>
+                </div>
+            </div>
+
+            <button type="button" onclick="enhanceWithAI()">Apply Enhancements</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

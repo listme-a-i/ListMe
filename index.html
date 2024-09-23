@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LisTMe - Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>LisTMe</h1>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <div id="menu" class="menu">
+            <ul>
+                <li><a href="analytics.html">Analytics</a></li>
+                <li><a href="enhance-quality.html">Enhance Quality</a></li>
+                <li><a href="generate-captions.html">Generate Captions</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <div class="upload-container">
+            <div class="upload-box">
+                <label for="file-upload">
+                    <img src="upload-icon.png" alt="Upload Icon" />
+                    <p>Upload Files</p>
+                </label>
+                <input id="file-upload" type="file" accept="image/*,video/*" multiple>
+            </div>
+
+            <div class="enhance-option">
+                <input type="checkbox" id="enhance-ai" onclick="enhanceWithAI()">
+                <label for="enhance-ai">Enhance with AI</label>
+            </div>
+
+            <input type="text" placeholder="Insert Caption..." class="caption-input">
+            <div class="ai-option">
+                <input type="checkbox" id="caption-ai">
+                <label for="caption-ai">Type with AI</label>
+            </div>
+
+            <div class="upload-to">
+                <p>Upload to:</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com" target="_blank"><img src="images/instagram-icon.png" alt="Instagram"></a>
+                    <a href="https://www.facebook.com" target="_blank"><img src="images/facebook-icon.png" alt="Facebook"></a>
+                    <a href="https://www.twitter.com" target="_blank"><img src="images/twitter-icon.png" alt="Twitter"></a>
+                    <a href="https://www.linkedin.com" target="_blank"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
