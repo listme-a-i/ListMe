@@ -8,12 +8,10 @@
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">
-                <h1>LisTMe</h1>
-            </div>
-            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
-        </nav>
+        <div class="logo">
+            <h1>LisTMe</h1>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
         <div id="menu" class="menu">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -26,19 +24,44 @@
 
     <main>
         <div class="ai-container">
-            <h2>Your Post's Caption</h2>
-            <p>Assist with AI</p>
-            <textarea rows="4" placeholder="Type 10-15 words to get started..."></textarea>
+            <h2>Generate Captions with AI</h2>
+            <textarea id="caption-input" placeholder="Describe your image or idea..." rows="4"></textarea>
+            <button type="button" onclick="generateCaption()">Generate Caption</button>
 
-            <p>OR</p>
-
-            <div class="ai-option">
-                <input type="checkbox" id="generate-ai">
-                <label for="generate-ai">Generate automatic captions from images</label>
-            </div>
+            <h3>Generated Caption:</h3>
+            <!-- New Textbox for displaying AI-generated caption -->
+            <textarea id="generated-caption" rows="4" readonly style="width: 100%; margin-top: 10px;"></textarea>
         </div>
     </main>
 
-    <script src="script.js"></script>
+    <script>
+        async function generateCaption() {
+            const userInput = document.getElementById("caption-input").value;
+
+            if (!userInput) {
+                alert("Please enter a description to generate a caption.");
+                return;
+            }
+
+            const response = await fetch('https://api.openai.com/v1/completions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer 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'
+                },
+                body: JSON.stringify({
+                    model: "text-davinci-003",
+                    prompt: userInput,
+                    max_tokens: 50
+                })
+            });
+
+            const data = await response.json();
+            const caption = data.choices[0].text.trim();
+
+            // Display the generated caption in the new textarea
+            document.getElementById("generated-caption").value = caption;
+        }
+    </script>
 </body>
 </html>
