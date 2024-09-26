@@ -43,16 +43,7 @@
                 return;
             }
 
-            const response = await fetch('https://api.openai.com/v1/completions', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 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'
-                },
-                body: JSON.stringify({
-                    model: "text-davinci-003",
-                    prompt: userInput,
-                    max_tokens: 50
+           
                 })
             });
 
